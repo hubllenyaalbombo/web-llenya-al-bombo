@@ -1,0 +1,192 @@
+@import "tailwindcss";
+
+/* ===================================
+   DESIGN TOKENS — Llenya al Bombo
+   =================================== */
+
+@theme inline {
+  /* Brand colors - Organic & Cheerful */
+  --color-rojo: #D73738;
+  --color-rojo-dark: #A32829;
+  --color-rojo-light: #E85B5C;
+  --color-negro: #18181B;
+  --color-negro-light: #27272A;
+  --color-negro-lighter: #3F3F46;
+  --color-blanco: #FAFAFA;
+  --color-blanco-pure: #FFFFFF;
+  --color-gris: #A1A1AA;
+  --color-gris-dark: #71717A;
+  --color-gris-light: #D4D4D8;
+
+  /* Fonts */
+  --font-heading: 'Pusab', system-ui, sans-serif;
+  --font-body: var(--font-nunito);
+}
+
+/* ===================================
+   BASE STYLES
+   =================================== */
+
+html {
+  scroll-padding-top: 5rem;
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 0;
+  }
+}
+
+body {
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-negro);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-negro-lighter);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gris-dark);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-rojo);
+  color: var(--color-blanco-pure);
+}
+
+/* Skip link — accessibility */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-rojo);
+  color: var(--color-blanco-pure);
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ===================================
+   UTILITIES
+   =================================== */
+
+/* Section divider — organic/wavy feel */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, var(--color-negro-lighter) 30%, var(--color-rojo)/20% 50%, var(--color-negro-lighter) 70%, transparent 95%);
+  margin: 0 2rem;
+  border-radius: 999px;
+}
+
+/* Hide scrollbar for horizontal scrolling lists */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5%, 10%) scale(1.1); }
+  66% { transform: translate(-5%, 5%) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+.animate-bob {
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+/* Tilt card on hover */
+.hover-tilt {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
+}
+.hover-tilt:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(255, 51, 51, 0.2);
+}
+
+/* Irregular organic shapes for buttons & elements */
+.shape-blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.shape-blob:hover {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.shape-blob-1 {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.shape-blob-1:hover {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.shape-blob-2 {
+  border-radius: 40% 60% 70% 30% / 50% 30% 60% 40%;
+}
+.shape-blob-2:hover {
+  border-radius: 60% 40% 30% 70% / 40% 60% 40% 70%;
+}
+
+.shape-blob-3 {
+  border-radius: 70% 30% 50% 50% / 40% 60% 40% 60%;
+}
+.shape-blob-3:hover {
+  border-radius: 40% 60% 30% 70% / 60% 40% 70% 30%;
+}
+
+.shape-blob-4 {
+  border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+}
+.shape-blob-4:hover {
+  border-radius: 40% 60% 50% 50% / 50% 50% 40% 60%;
+}
+
+/* Comic-style black outline for titles and headings */
+h1, h2, h3, h4, h5, h6, .comic-stroke, .font-heading {
+  -webkit-text-stroke: 2px #000000;
+  paint-order: stroke fill;
+  text-shadow: 2px 2px 0px #000000;
+}
+
+@media (min-width: 640px) {
+  h1, h2, h3, h4, h5, h6, .comic-stroke, .font-heading {
+    -webkit-text-stroke: 3.5px #000000;
+    text-shadow: 3.5px 3.5px 0px #000000;
+  }
+}
+
