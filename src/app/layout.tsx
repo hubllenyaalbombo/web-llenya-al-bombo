@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/Galeria/Galeria 4.JPG",
+        url: "/galeria/galeria-4.jpg",
         width: 1200,
         height: 630,
         alt: "Charanga Llenya al Bombo en directo",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: "Llenya al Bombo — Charanga & Xaranga Profesional",
     description:
       "Xaranga y Charanga profesional para bodas, fiestas patronales y eventos. La mejor música y animación en directo.",
-    images: ["/Galeria/Galeria 4.JPG"],
+    images: ["/galeria/galeria-4.jpg"],
   },
   robots: {
     index: true,
