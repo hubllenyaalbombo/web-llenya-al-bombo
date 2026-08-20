@@ -18,15 +18,19 @@ export default function HeroSection() {
       aria-label="Presentación de Llenya al Bombo"
     >
       {/* ═══════ Background — video FIJO (parallax cover effect) ═══════ */}
-      <div className="fixed inset-0 z-0 overflow-hidden">
+      <div className="fixed inset-0 z-0 overflow-hidden bg-negro">
         <video
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
+          poster="/hero-poster.webp"
           className="w-full h-full object-cover opacity-80"
-          src="/Hero.mp4"
-        />
+        >
+          <source src="/Hero.webm" type="video/webm" />
+          <source src="/Hero.mp4" type="video/mp4" />
+        </video>
         {/* Overlay oscuro suave para legibilidad del texto */}
         <div className="absolute inset-0 bg-negro/50 backdrop-blur-[2px] transform-gpu will-change-transform" />
       </div>

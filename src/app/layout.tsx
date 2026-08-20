@@ -108,6 +108,7 @@ export default function RootLayout({
       className="h-full antialiased"
     >
       <head>
+        <link rel="preload" href="/hero-poster.webp" as="image" type="image/webp" fetchPriority="high" />
         <link href="https://fonts.cdnfonts.com/css/pusab" rel="stylesheet" />
         {/* Schema.org — Structured Data (MusicGroup & EntertainmentBusiness) */}
         <script
