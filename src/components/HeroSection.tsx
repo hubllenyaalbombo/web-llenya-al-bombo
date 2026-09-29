@@ -26,13 +26,16 @@ export default function HeroSection() {
           playsInline
           preload="metadata"
           poster="/hero-poster.webp"
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover object-[50%_35%] md:object-center opacity-85 transition-opacity duration-700"
         >
           <source src="/Hero.webm" type="video/webm" />
           <source src="/Hero.mp4" type="video/mp4" />
         </video>
-        {/* Overlay oscuro suave para legibilidad del texto */}
-        <div className="absolute inset-0 bg-negro/50 backdrop-blur-[2px] transform-gpu will-change-transform" />
+        {/* Overlay oscuro y viñeteado cinematográfico (mayor contraste en móvil) */}
+        <div className="absolute inset-0 bg-negro/40 md:bg-negro/50 backdrop-blur-[1px] md:backdrop-blur-[2px] transform-gpu will-change-transform" />
+        {/* Degradado superior para la barra de navegación y degradado inferior hacia la siguiente sección */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-negro via-negro/70 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-negro via-negro/80 to-transparent pointer-events-none" />
       </div>
 
       {/* ═══════ Contenido principal ═══════ */}
