@@ -51,7 +51,7 @@ export default function HeroSection() {
               href="#contacto"
               className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 md:px-16 md:py-6 bg-rojo text-blanco-pure font-heading comic-stroke font-bold uppercase tracking-widest text-base sm:text-xl md:text-2xl shape-blob shadow-xl shadow-rojo/30 hover:bg-rojo-dark hover:shadow-rojo/50 active:scale-[0.97] transition-all duration-300"
             >
-              <span className="relative z-10 comic-stroke">Pedir Presupuesto</span>
+              <span className="relative z-10 comic-stroke">Contactar ahora</span>
               <div className="absolute inset-0 bg-blanco/20 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 shape-blob pointer-events-none" />
             </a>
           </div>

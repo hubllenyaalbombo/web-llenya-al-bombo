@@ -64,12 +64,16 @@ export default function MobileActionBar() {
           <span>Llamar</span>
         </a>
 
-        {/* Presupuesto Button */}
+        {/* Email Button */}
         <a
-          href="#contacto"
-          className="flex items-center justify-center gap-1 py-2.5 px-2 bg-rojo text-blanco-pure rounded-xl text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider font-bold shadow-md shadow-rojo/30 active:scale-95 transition-transform"
+          href={`mailto:${CONTACT_INFO.email}`}
+          className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-rojo text-blanco-pure rounded-xl text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider font-bold shadow-md shadow-rojo/30 active:scale-95 transition-transform"
         >
-          <span>Pedir precio</span>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="shrink-0">
+            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
+            <path d="M22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" stroke="currentColor" strokeWidth="2" />
+          </svg>
+          <span>Email</span>
         </a>
       </div>
     </aside>
