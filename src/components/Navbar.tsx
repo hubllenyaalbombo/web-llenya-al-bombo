@@ -114,8 +114,14 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* Menu Button */}
-          <div className="flex items-center">
+          {/* Action & Menu Buttons */}
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            <a
+              href="#contacto"
+              className="px-3.5 py-1.5 sm:px-4 sm:py-2 bg-rojo text-blanco-pure text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider rounded-full shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-all"
+            >
+              Presupuesto
+            </a>
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 shadow-md transition-all"
