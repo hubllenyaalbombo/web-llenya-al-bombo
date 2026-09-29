@@ -418,7 +418,7 @@ export default function AboutSection() {
 
                 <RevealOnScroll delay={0.1}>
                   <h2
-                    className="font-heading comic-stroke text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-blanco uppercase leading-[0.9] tracking-tighter relative z-10"
+                    className="font-heading comic-stroke text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-blanco uppercase leading-[0.9] tracking-tighter relative z-10"
                     style={{ textShadow: "4px 4px 0px #000000" }}
                   >
                     Música<br />en vena<br />
@@ -428,7 +428,7 @@ export default function AboutSection() {
               </div>
 
               {/* TOP RIGHT: Image (col-span-5) */}
-              <div className="lg:col-span-5 relative rounded-[2.5rem] overflow-hidden border border-blanco/5 min-h-[300px] sm:min-h-[350px] group shadow-xl bg-negro">
+              <div className="lg:col-span-5 relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-blanco/5 min-h-[300px] sm:min-h-[350px] group shadow-xl bg-negro">
                 <RevealOnScroll delay={0.2} className="w-full h-full">
                   <ImageComparisonSlider
                     beforeImage="/Historia/2007(2).png"
@@ -442,7 +442,7 @@ export default function AboutSection() {
               </div>
 
               {/* BOTTOM LEFT: Narratives (col-span-5) */}
-              <div className="lg:col-span-5 bg-negro/40 backdrop-blur-sm border border-blanco/5 rounded-[2.5rem] p-8 md:p-10 shadow-xl flex flex-col justify-center">
+              <div className="lg:col-span-5 bg-negro/40 backdrop-blur-sm border border-blanco/5 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-xl flex flex-col justify-center">
                 <RevealOnScroll delay={0.2}>
                   <p className="text-gris-light text-sm md:text-base leading-relaxed mb-5 font-medium">
                     Desde Onda (Castellón) llevamos poniendo ritmo a la calle desde 2007. Lo que empezó
@@ -468,21 +468,21 @@ export default function AboutSection() {
               </div>
 
               {/* BOTTOM RIGHT: Compact Values Grid (col-span-7) */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 h-full items-start">
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-7 sm:gap-6 h-full items-start">
                 {VALUES_CARDS.map((card, idx) => (
-                  <RevealOnScroll key={card.title} delay={0.2 + idx * 0.1} className="mt-8">
+                  <RevealOnScroll key={card.title} delay={0.2 + idx * 0.1} className="mt-6 sm:mt-8">
                     <div className="group relative flex flex-col pt-2">
 
-                      {/* Playful Asymmetrical Title */}
-                      <div className="absolute -top-5 left-4 sm:left-6 bg-rojo px-4 py-1.5 z-10 shadow-lg shadow-rojo/20 rounded-tl-3xl rounded-br-3xl rounded-tr-sm rounded-bl-sm -rotate-3 group-hover:rotate-0 group-hover:-translate-y-1 transition-all duration-300 w-max max-w-[85%] flex items-center justify-center">
-                        <h4 className="font-heading comic-stroke text-lg md:text-xl text-blanco-pure uppercase tracking-wide leading-tight text-center">
+                      {/* Playful Asymmetrical Title Tag — sized to fit comfortably with no cutoffs */}
+                      <div className="absolute -top-5 left-3 sm:left-6 bg-rojo px-4 sm:px-5 py-2 z-10 shadow-lg shadow-rojo/25 rounded-tl-2xl rounded-br-2xl rounded-tr-sm rounded-bl-sm -rotate-2 group-hover:rotate-0 group-hover:-translate-y-1 transition-all duration-300 w-auto max-w-[92%] flex items-center justify-center">
+                        <h3 className="font-heading comic-stroke text-base sm:text-lg md:text-xl text-blanco-pure uppercase tracking-wider leading-snug text-center">
                           {card.title}
-                        </h4>
+                        </h3>
                       </div>
 
                       {/* Main Card Body */}
-                      <div className="bg-negro border border-blanco/10 rounded-3xl p-6 sm:p-8 pt-14 hover:border-rojo/40 hover:bg-negro-light transition-all duration-300 shadow-xl group-hover:shadow-rojo/10">
-                        <p className="text-blanco/80 text-[15px] leading-relaxed group-hover:text-blanco transition-colors duration-300">
+                      <div className="bg-negro border border-blanco/10 rounded-3xl p-6 sm:p-8 pt-12 sm:pt-14 hover:border-rojo/40 hover:bg-negro-light transition-all duration-300 shadow-xl group-hover:shadow-rojo/10">
+                        <p className="text-blanco/85 text-sm sm:text-[15px] leading-relaxed group-hover:text-blanco transition-colors duration-300">
                           {card.description}
                         </p>
                       </div>
