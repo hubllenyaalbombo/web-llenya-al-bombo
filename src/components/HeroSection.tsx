@@ -45,12 +45,6 @@ export default function HeroSection() {
           </h1>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={0.35}>
-          <p className="mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl text-blanco/90 font-medium max-w-xl mx-auto px-2">
-            Xaranga & Charanga profesional para fiestas, bodas y eventos en directo
-          </p>
-        </RevealOnScroll>
-
         <RevealOnScroll delay={0.5}>
           <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
             <a
