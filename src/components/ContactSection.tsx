@@ -253,8 +253,8 @@ export default function ContactSection() {
                 <div className="space-y-6">
                   
                   {/* Tarjeta 1: Contacto */}
-                  <div className="bg-negro/40 p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
-                    <h3 className="text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <div className="bg-negro/40 p-6 sm:p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
+                    <h3 className="text-lg sm:text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
                       <span className="w-8 h-[2px] bg-rojo inline-block"></span>
                       Contacto
                     </h3>
@@ -302,12 +302,12 @@ export default function ContactSection() {
                   </div>
 
                   {/* Tarjeta 2: Evento */}
-                  <div className="bg-negro/40 p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
-                    <h3 className="text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <div className="bg-negro/40 p-6 sm:p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
+                    <h3 className="text-lg sm:text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
                       <span className="w-8 h-[2px] bg-rojo inline-block"></span>
                       Logística
                     </h3>
-                    <div className="space-y-6">
+                    <div className="space-y-5">
                       <div>
                         <label htmlFor="province" className="block text-sm font-semibold text-blanco mb-2 tracking-wider">
                           Provincia <span className="text-rojo">*</span>
@@ -322,7 +322,7 @@ export default function ContactSection() {
                           }}
                           className={`w-full bg-negro border ${
                             errors.province ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"
-                          } rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer`}
+                          } rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer min-h-[48px]`}
                           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B3B3B3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1.25rem center" }}
                         >
                           <option value="" disabled>Selecciona una provincia...</option>
@@ -365,7 +365,7 @@ export default function ContactSection() {
                             onChange={(e) => setCustomMunicipality(e.target.value)}
                             className={`w-full bg-negro border ${
                               errors.customMunicipality ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"
-                            } rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark`}
+                            } rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark min-h-[48px]`}
                           />
                         </div>
                       )}
@@ -373,7 +373,7 @@ export default function ContactSection() {
                         <label className="block text-sm font-semibold text-blanco mb-3 tracking-wider">
                           ¿Es un evento de varios días?
                         </label>
-                        <div className="flex items-center gap-2 bg-negro border border-blanco/10 p-1.5 rounded-full w-fit mb-4">
+                        <div className="flex items-center gap-2 bg-negro border border-blanco/10 p-1.5 rounded-full w-fit mb-2">
                           <button
                             type="button"
                             onClick={() => setMultiDay(false)}
@@ -395,7 +395,7 @@ export default function ContactSection() {
                           Fecha del evento <span className="text-rojo">*</span>
                         </label>
                         {multiDay ? (
-                          <div className="flex flex-col sm:flex-row gap-4">
+                          <div className="flex flex-col sm:flex-row gap-3">
                             <div className="flex-1">
                               <span className="block text-xs text-gris mb-1">Desde:</span>
                               <input
@@ -403,7 +403,7 @@ export default function ContactSection() {
                                 max="9999-12-31"
                                 value={date}
                                 onChange={(e) => setDate(e.target.value)}
-                                className={`w-full bg-negro border ${errors.date ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark]`}
+                                className={`w-full bg-negro border ${errors.date ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark] min-h-[48px]`}
                               />
                             </div>
                             <div className="flex-1">
@@ -413,7 +413,7 @@ export default function ContactSection() {
                                 max="9999-12-31"
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
-                                className={`w-full bg-negro border ${errors.endDate ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark]`}
+                                className={`w-full bg-negro border ${errors.endDate ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark] min-h-[48px]`}
                               />
                             </div>
                           </div>
@@ -424,7 +424,7 @@ export default function ContactSection() {
                             max="9999-12-31"
                             value={date}
                             onChange={(e) => setDate(e.target.value)}
-                            className={`w-full bg-negro border ${errors.date ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark]`}
+                            className={`w-full bg-negro border ${errors.date ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 [color-scheme:dark] min-h-[48px]`}
                           />
                         )}
                       </div>
@@ -436,12 +436,12 @@ export default function ContactSection() {
                 <div className="space-y-6">
                   
                   {/* Tarjeta 3: Formato */}
-                  <div className="bg-negro/40 p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
-                    <h3 className="text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <div className="bg-negro/40 p-6 sm:p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
+                    <h3 className="text-lg sm:text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
                       <span className="w-8 h-[2px] bg-rojo inline-block"></span>
                       Formato
                     </h3>
-                    <div className="space-y-6">
+                    <div className="space-y-5">
                       <div>
                         <label htmlFor="eventType" className="block text-sm font-semibold text-blanco mb-2 tracking-wider">
                           Tipo de evento <span className="text-rojo">*</span>
@@ -450,7 +450,7 @@ export default function ContactSection() {
                           id="eventType"
                           value={eventType}
                           onChange={(e) => setEventType(e.target.value)}
-                          className={`w-full bg-negro border ${errors.eventType ? "border-rojo error-field" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer`}
+                          className={`w-full bg-negro border ${errors.eventType ? "border-rojo error-field" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer min-h-[48px]`}
                           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B3B3B3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1.25rem center" }}
                         >
                           <option value="" disabled>Selecciona un tipo...</option>
@@ -470,7 +470,7 @@ export default function ContactSection() {
                           id="duration"
                           value={duration}
                           onChange={(e) => setDuration(e.target.value)}
-                          className="w-full bg-negro border border-blanco/10 rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer"
+                          className="w-full bg-negro border border-blanco/10 rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer min-h-[48px]"
                           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B3B3B3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1.25rem center" }}
                         >
                           <option value="">No especificado</option>
@@ -488,7 +488,7 @@ export default function ContactSection() {
                           id="source"
                           value={source}
                           onChange={(e) => setSource(e.target.value)}
-                          className="w-full bg-negro border border-blanco/10 rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer"
+                          className="w-full bg-negro border border-blanco/10 rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 appearance-none cursor-pointer min-h-[48px]"
                           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23B3B3B3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1.25rem center" }}
                         >
                           <option value="" disabled>Selecciona...</option>
@@ -505,8 +505,8 @@ export default function ContactSection() {
                   </div>
 
                   {/* Tarjeta 4: Extras */}
-                  <div className="bg-negro/40 p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
-                    <h3 className="text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <div className="bg-negro/40 p-6 sm:p-8 rounded-[2rem] border border-blanco/5 hover:border-rojo/30 transition-colors duration-500 shadow-2xl">
+                    <h3 className="text-lg sm:text-xl font-heading comic-stroke text-blanco uppercase tracking-widest mb-6 flex items-center gap-3">
                       <span className="w-8 h-[2px] bg-rojo inline-block"></span>
                       Actuación
                     </h3>
