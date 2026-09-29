@@ -91,25 +91,25 @@ export default function Navbar() {
 
       {/* ═══════ MOBILE & TABLET TOP BAR (< xl) ═══════ */}
       <div
-        className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 py-3 transition-all duration-300 ${
+        className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 ${
           modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
-        } ${scrolled ? "bg-negro/85 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/40" : "bg-gradient-to-b from-negro/80 to-transparent"}`}
+        } ${scrolled ? "bg-negro/90 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/50" : "bg-gradient-to-b from-negro/90 via-negro/40 to-transparent"}`}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo / Brand Link */}
           <a
             href="#inicio"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2.5 sm:gap-3 group"
             aria-label="Llenya al Bombo — Inicio"
           >
-            <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 overflow-hidden flex items-center justify-center shrink-0">
               <img
                 src="/Cabeza.svg"
                 alt="Llenya Logo"
-                className="w-full h-full object-contain scale-[2.2] group-hover:scale-[2.4] transition-transform"
+                className="w-full h-full object-contain scale-[2.4] group-hover:scale-[2.6] transition-transform"
               />
             </div>
-            <span className="font-heading comic-stroke text-sm sm:text-base text-blanco uppercase tracking-wider">
+            <span className="font-heading comic-stroke text-lg sm:text-2xl text-blanco uppercase tracking-wide leading-none">
               Llenya al Bombo
             </span>
           </a>
@@ -118,10 +118,10 @@ export default function Navbar() {
           <div className="flex items-center">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="w-10 h-10 rounded-full bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 transition-all"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 shadow-md transition-all"
               aria-label="Abrir menú"
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="7" x2="20" y2="7"></line>
                 <line x1="4" y1="12" x2="20" y2="12"></line>
                 <line x1="4" y1="17" x2="20" y2="17"></line>
