@@ -29,6 +29,8 @@ export default function ContactSection() {
   const [description, setDescription] = useState("");
   const [source, setSource] = useState("");
 
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
   // Honeypot anti-spam (invisible field that only bots fill)
   const [honeypot, setHoneypot] = useState("");
 
@@ -83,6 +85,7 @@ export default function ContactSection() {
     if (municipality === "Otro" && !customMunicipality.trim()) newErrors.customMunicipality = "Obligatorio";
     if (!eventType) newErrors.eventType = "Obligatorio";
     if (description.length < 20) newErrors.description = "Mínimo 20 caracteres";
+    if (!privacyAccepted) newErrors.privacyAccepted = "Debes aceptar la política de privacidad";
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -557,6 +560,42 @@ export default function ContactSection() {
                             {description.length} / mín 20 caracteres
                           </span>
                         </div>
+                      </div>
+
+                      {/* RGPD Consent Checkbox */}
+                      <div className="pt-2">
+                        <label className="flex items-start gap-3 cursor-pointer group">
+                          <div className={`relative mt-0.5 w-5 h-5 shrink-0 border ${errors.privacyAccepted ? "border-rojo shadow-[0_0_8px_rgba(255,51,51,0.5)]" : "border-blanco/30"} rounded flex items-center justify-center bg-negro transition-colors group-hover:border-rojo`}>
+                            <input
+                              type="checkbox"
+                              checked={privacyAccepted}
+                              onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                              className="peer absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                            />
+                            <svg className="w-3.5 h-3.5 text-blanco-pure opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                          </div>
+                          <span className="text-xs sm:text-sm text-gris leading-relaxed group-hover:text-blanco transition-colors select-none">
+                            He leído y acepto la{" "}
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.dispatchEvent(new CustomEvent("open-legal-modal", { detail: "privacy" }));
+                              }}
+                              className="text-rojo underline hover:text-rojo-light"
+                            >
+                              política de privacidad y protección de datos (RGPD)
+                            </button>
+                            . <span className="text-rojo">*</span>
+                          </span>
+                        </label>
+                        {errors.privacyAccepted && (
+                          <p className="text-rojo text-xs mt-1.5 font-semibold">
+                            {errors.privacyAccepted}
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

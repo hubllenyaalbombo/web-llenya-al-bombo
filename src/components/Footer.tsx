@@ -1,10 +1,12 @@
+"use client";
+
 import { NAV_LINKS, CONTACT_INFO } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative z-10 bg-negro-light pt-6 pb-0 px-5 sm:px-8 xl:pl-[250px] xl:pr-12">
+    <div className="relative z-10 bg-negro-light pt-6 pb-20 sm:pb-24 xl:pb-0 px-5 sm:px-8 xl:pl-[250px] xl:pr-12">
       <footer
         className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto border-t-[6px] md:border-t-[8px] border-x-2 border-x-rojo/40 border-t-rojo border-b-0 rounded-t-[3rem] lg:rounded-t-[4.5rem] rounded-b-none overflow-hidden shadow-2xl shadow-black/80"
         style={{ background: "#141010" }}
@@ -118,16 +120,39 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar — centered layout */}
-          <div className="border-t border-blanco/[0.08] py-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-14 text-center">
-            <p className="text-blanco/50 text-xs sm:text-sm tracking-wider">
-              © {currentYear} Llenya al Bombo · Todos los derechos reservados
-            </p>
+          <div className="border-t border-blanco/[0.08] py-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs sm:text-sm text-blanco/50">
+              <p>© {currentYear} Llenya al Bombo</p>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-legal-modal", { detail: "legal" }))}
+                  className="hover:text-blanco transition-colors underline"
+                >
+                  Aviso Legal
+                </button>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-legal-modal", { detail: "privacy" }))}
+                  className="hover:text-blanco transition-colors underline"
+                >
+                  Privacidad
+                </button>
+                <button
+                  type="button"
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-legal-modal", { detail: "cookies" }))}
+                  className="hover:text-blanco transition-colors underline"
+                >
+                  Cookies
+                </button>
+              </div>
+            </div>
 
             <a
               href="https://hubllenyaalbombo.github.io"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center px-7 py-3 bg-[#111111] hover:bg-rojo text-blanco-pure border-2 border-rojo hover:border-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-xs sm:text-sm shape-blob shadow-[4px_4px_0px_0px_rgba(239,35,60,0.5)] hover:shadow-[7px_7px_0px_0px_#EF233C] hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0.5 active:translate-x-0.5 active:shadow-none transition-all duration-300"
+              className="group relative inline-flex items-center justify-center px-6 py-2.5 bg-[#111111] hover:bg-rojo text-blanco-pure border-2 border-rojo hover:border-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-xs sm:text-sm shape-blob shadow-[4px_4px_0px_0px_rgba(239,35,60,0.5)] hover:shadow-[7px_7px_0px_0px_#EF233C] hover:-translate-y-1 hover:-translate-x-1 active:translate-y-0.5 active:translate-x-0.5 active:shadow-none transition-all duration-300"
             >
               <span className="relative z-10 comic-stroke">
                 Área Privada Músicos

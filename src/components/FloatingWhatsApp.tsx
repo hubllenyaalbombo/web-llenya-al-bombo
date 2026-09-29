@@ -20,7 +20,7 @@ export default function FloatingWhatsApp() {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[90] transition-all duration-700 ${
+      className={`hidden md:block fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[90] transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
