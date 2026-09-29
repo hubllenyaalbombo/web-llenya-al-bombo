@@ -9,8 +9,8 @@ import React from "react";
 export default function GlobalGraffiti() {
   return (
     <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-[0.15]">
-      {/* SVG Filter for rough brush/graffiti effect */}
-      <svg width="0" height="0" className="absolute">
+      {/* SVG Filter for rough brush/graffiti effect - hidden on small mobile screens to prevent GPU lag on scroll */}
+      <svg width="0" height="0" className="absolute hidden md:block">
         <defs>
           <filter id="global-brush-texture">
             <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" result="noise" />
@@ -57,7 +57,7 @@ export default function GlobalGraffiti() {
       </svg>
 
       {/* Random Dots/Splatter Overlay */}
-      <div className="absolute inset-0 w-full h-full" style={{ filter: 'url(#global-brush-texture)' }}>
+      <div className="absolute inset-0 w-full h-full md:[filter:url(#global-brush-texture)]">
         <div className="absolute top-[20%] left-[20%] w-6 h-6 rounded-full bg-rojo opacity-60"></div>
         <div className="absolute top-[25%] left-[25%] w-3 h-3 rounded-full bg-rojo opacity-60"></div>
         <div className="absolute top-[50%] left-[10%] w-8 h-8 rounded-full bg-blanco opacity-40"></div>

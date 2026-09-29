@@ -8,32 +8,15 @@ import MobileMenu from "./MobileMenu";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Draggable state
-  const [headPos, setHeadPos] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const dragStartTime = useRef(0);
-  const dragMoved = useRef(false);
-  const constraintsRef = useRef<HTMLDivElement>(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Track if we're on mobile/tablet (< xl / 1280px)
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 1280);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  const [modalOpen, setModalOpen] = useState(false);
 
   // Track if any modal / lightbox is open
   useEffect(() => {
@@ -55,28 +38,6 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
-
-  // Handle tap vs drag
-  const handlePointerDown = () => {
-    dragStartTime.current = Date.now();
-    dragMoved.current = false;
-  };
-
-  const handleDragStart = () => {
-    setIsDragging(true);
-    dragMoved.current = true;
-  };
-
-  const handleDragEnd = (_: any, info: any) => {
-    setIsDragging(false);
-    setHeadPos({ x: info.point.x, y: info.point.y });
-  };
-
-  const handleTap = () => {
-    if (!dragMoved.current) {
-      setMobileMenuOpen(true);
-    }
-  };
 
   return (
     <>
@@ -128,56 +89,53 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* ═══════ MOBILE & TABLET FLOATING BOAR HEAD (< xl) ═══════ */}
-      {/* Invisible drag constraints container */}
+      {/* ═══════ MOBILE & TABLET TOP BAR (< xl) ═══════ */}
       <div
-        ref={constraintsRef}
-        className="xl:hidden fixed inset-0 z-50 pointer-events-none"
-        aria-hidden="true"
-      />
-
-      <motion.div
-        className={`xl:hidden fixed z-50 cursor-grab active:cursor-grabbing touch-none select-none will-change-transform transform-gpu ${
-          modalOpen ? "pointer-events-none" : ""
-        }`}
-        style={{
-          /* Scale with viewport: ~22vw on mobile, ~15vw on tablet, clamped */
-          width: "clamp(85px, 22vw, 165px)",
-          height: "clamp(85px, 22vw, 165px)",
-          top: "10px",
-          left: "50%",
-          x: "-50%",
-          touchAction: "none",
-        }}
-        drag
-        dragConstraints={constraintsRef}
-        dragElastic={0.1}
-        dragMomentum={false}
-        onPointerDown={handlePointerDown}
-        onDragStart={handleDragStart}
-        onDragEnd={handleDragEnd}
-        onTap={handleTap}
-        whileDrag={{ scale: 1.15 }}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{
-          opacity: modalOpen ? 0 : 1,
-          scale: modalOpen ? 0 : 1,
-        }}
-        transition={{
-          opacity: { duration: 0.25 },
-          scale: { duration: 0.25 },
-        }}
+        className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 py-3 transition-all duration-300 ${
+          modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
+        } ${scrolled ? "bg-negro/85 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/40" : "bg-gradient-to-b from-negro/80 to-transparent"}`}
       >
-        <div className="w-full h-full flex items-center justify-center pointer-events-none">
-          <img
-            src="/Cabeza.svg"
-            alt="Llenya al Bombo — Abrir menú"
-            className="w-full h-full object-contain drop-shadow-[0_6px_16px_rgba(0,0,0,0.65)] pointer-events-none transform-gpu"
-            style={{ transform: "scale(3.3)" }}
-            draggable={false}
-          />
+        <div className="flex items-center justify-between max-w-7xl mx-auto">
+          {/* Logo / Brand Link */}
+          <a
+            href="#inicio"
+            className="flex items-center gap-2 group"
+            aria-label="Llenya al Bombo — Inicio"
+          >
+            <div className="w-10 h-10 overflow-hidden flex items-center justify-center">
+              <img
+                src="/Cabeza.svg"
+                alt="Llenya Logo"
+                className="w-full h-full object-contain scale-[2.2] group-hover:scale-[2.4] transition-transform"
+              />
+            </div>
+            <span className="font-heading comic-stroke text-sm sm:text-base text-blanco uppercase tracking-wider">
+              Llenya al Bombo
+            </span>
+          </a>
+
+          {/* Quick CTA & Menu Button */}
+          <div className="flex items-center gap-2">
+            <a
+              href="#contacto"
+              className="px-3.5 py-1.5 bg-rojo text-blanco-pure text-xs font-heading comic-stroke uppercase tracking-wider rounded-full shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-all"
+            >
+              Presupuesto
+            </a>
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="w-10 h-10 rounded-full bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 transition-all"
+              aria-label="Abrir menú"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="7" x2="20" y2="7"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="17" x2="20" y2="17"></line>
+              </svg>
+            </button>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

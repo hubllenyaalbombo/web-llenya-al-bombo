@@ -51,9 +51,25 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           aria-modal="true"
           aria-label="Menú de navegación"
         >
+          {/* Header with Title & Close button */}
+          <div className="flex items-center justify-between px-6 pt-5 pb-2 border-b border-blanco/5">
+            <span className="font-heading comic-stroke text-sm uppercase tracking-widest text-rojo">
+              Menú
+            </span>
+            <button
+              onClick={onClose}
+              className="w-10 h-10 rounded-full bg-blanco/5 flex items-center justify-center text-blanco/80 hover:text-blanco hover:bg-rojo transition-colors"
+              aria-label="Cerrar menú"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
 
-        {/* Links */}
-        <nav className="flex flex-col py-[clamp(12px,2.5vw,20px)] px-[clamp(12px,2.5vw,20px)]">
+          {/* Links */}
+          <nav className="flex flex-col py-[clamp(12px,2.5vw,20px)] px-[clamp(12px,2.5vw,20px)]">
           <ul className="space-y-1" role="list">
             {NAV_LINKS.map((link, index) => (
               <motion.li

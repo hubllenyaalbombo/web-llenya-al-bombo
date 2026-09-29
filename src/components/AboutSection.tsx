@@ -408,18 +408,18 @@ export default function AboutSection() {
           {/* ══════════════════════════
               INTRO
               ══════════════════════════ */}
-          <div className="pt-24 md:pt-32 pb-20 md:pb-28">
+          <div className="pt-16 sm:pt-24 md:pt-32 pb-16 md:pb-28">
             {/* COMPACT BENTO GRID */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
 
               {/* TOP LEFT: Headline (col-span-7) */}
-              <div className="lg:col-span-7 bg-negro/40 border border-blanco/5 rounded-[2.5rem] p-8 md:p-12 flex flex-col justify-center relative overflow-hidden group shadow-xl">
+              <div className="lg:col-span-7 bg-negro/40 border border-blanco/5 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 md:p-12 flex flex-col justify-center relative overflow-hidden group shadow-xl">
                 <div className="absolute -right-20 -top-20 w-64 h-64 bg-rojo/20 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-700 pointer-events-none transform-gpu will-change-transform" />
 
                 <RevealOnScroll delay={0.1}>
                   <h2
-                    className="font-heading comic-stroke text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-blanco uppercase leading-[0.85] tracking-tighter relative z-10"
-                    style={{ textShadow: "6px 6px 0px #000000" }}
+                    className="font-heading comic-stroke text-3xl sm:text-5xl md:text-6xl lg:text-[5.5rem] text-blanco uppercase leading-[0.9] tracking-tighter relative z-10"
+                    style={{ textShadow: "4px 4px 0px #000000" }}
                   >
                     Música<br />en vena<br />
                     <span className="text-rojo">desde 2007.</span>

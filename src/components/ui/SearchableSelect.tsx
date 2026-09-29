@@ -86,7 +86,7 @@ export default function SearchableSelect({
           hasError
             ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]"
             : "border-blanco/10"
-        } rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark ${
+        } rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark min-h-[48px] ${
           disabled ? "opacity-40 cursor-not-allowed" : ""
         }`}
       />

@@ -184,31 +184,31 @@ export default function ContactSection() {
 
         {/* Direct Contact Cards */}
         <RevealOnScroll delay={0.15}>
-          <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-10 sm:mb-14 max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-2.5 sm:gap-6 mb-8 sm:mb-14 max-w-4xl mx-auto">
             <a
               href={`https://wa.me/${CONTACT_INFO.phone.replace(/\s+/g, "").replace("+", "")}?text=${encodeURIComponent("Hola, me interesa contratar a Llenya al Bombo para un evento")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col justify-center items-center text-center p-3 sm:p-5 min-h-[120px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-[#25D366] shape-blob-1 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 shadow-[4px_4px_0px_0px_rgba(37,211,102,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(37,211,102,0.5)] hover:shadow-[9px_9px_0px_0px_#25D366]"
+              className="group relative flex flex-col justify-center items-center text-center p-2.5 sm:p-5 min-h-[110px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-[#25D366] shape-blob-1 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 active:scale-95 shadow-[4px_4px_0px_0px_rgba(37,211,102,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(37,211,102,0.5)] hover:shadow-[9px_9px_0px_0px_#25D366]"
             >
               <img src="/WhatsApp.png" alt="WhatsApp" width="52" height="52" className="w-8 h-8 sm:w-[52px] sm:h-[52px] object-contain mb-1 sm:mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 relative z-10" />
-              <span className="font-heading comic-stroke text-sm sm:text-2xl uppercase tracking-wider text-blanco relative z-10">WhatsApp</span>
+              <span className="font-heading comic-stroke text-xs sm:text-2xl uppercase tracking-wider text-blanco relative z-10">WhatsApp</span>
             </a>
             
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, "")}`}
-              className="group relative flex flex-col justify-center items-center text-center p-3 sm:p-5 min-h-[120px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-rojo shape-blob-2 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 shadow-[4px_4px_0px_0px_rgba(239,35,60,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(239,35,60,0.5)] hover:shadow-[9px_9px_0px_0px_#EF233C]"
+              className="group relative flex flex-col justify-center items-center text-center p-2.5 sm:p-5 min-h-[110px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-rojo shape-blob-2 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 active:scale-95 shadow-[4px_4px_0px_0px_rgba(239,35,60,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(239,35,60,0.5)] hover:shadow-[9px_9px_0px_0px_#EF233C]"
             >
               <img src="/Phone.png" alt="Llamar" width="52" height="52" className="w-8 h-8 sm:w-[52px] sm:h-[52px] object-contain mb-1 sm:mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 relative z-10" />
-              <span className="font-heading comic-stroke text-sm sm:text-2xl uppercase tracking-wider text-blanco relative z-10">Llamar</span>
+              <span className="font-heading comic-stroke text-xs sm:text-2xl uppercase tracking-wider text-blanco relative z-10">Llamar</span>
             </a>
             
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="group relative flex flex-col justify-center items-center text-center p-3 sm:p-5 min-h-[120px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-blanco shape-blob-3 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.5)] hover:shadow-[9px_9px_0px_0px_#ffffff]"
+              className="group relative flex flex-col justify-center items-center text-center p-2.5 sm:p-5 min-h-[110px] sm:min-h-[170px] bg-[#111111] border-2 sm:border-4 border-blanco shape-blob-3 overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:-translate-x-1.5 active:scale-95 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)] sm:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.5)] hover:shadow-[9px_9px_0px_0px_#ffffff]"
             >
               <img src="/Mail.png" alt="Email" width="60" height="60" className="w-8 h-8 sm:w-[60px] sm:h-[60px] object-contain mb-1 sm:mb-2 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 relative z-10" />
-              <span className="font-heading comic-stroke text-sm sm:text-2xl uppercase tracking-wider text-blanco relative z-10">Email</span>
+              <span className="font-heading comic-stroke text-xs sm:text-2xl uppercase tracking-wider text-blanco relative z-10">Email</span>
             </a>
           </div>
         </RevealOnScroll>
@@ -255,7 +255,7 @@ export default function ContactSection() {
                       <span className="w-8 h-[2px] bg-rojo inline-block"></span>
                       Contacto
                     </h3>
-                    <div className="space-y-6">
+                    <div className="space-y-5">
                       <div>
                         <label htmlFor="name" className="block text-sm font-semibold text-blanco mb-2 tracking-wider">
                           Nombre completo <span className="text-rojo">*</span>
@@ -266,7 +266,7 @@ export default function ContactSection() {
                           placeholder="Tu nombre completo"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          className={`w-full bg-negro border ${errors.name ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark`}
+                          className={`w-full bg-negro border ${errors.name ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark min-h-[48px]`}
                         />
                       </div>
                       <div>
@@ -279,7 +279,7 @@ export default function ContactSection() {
                           placeholder="tu@email.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className={`w-full bg-negro border ${errors.email ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark`}
+                          className={`w-full bg-negro border ${errors.email ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark min-h-[48px]`}
                         />
                       </div>
                       <div>
@@ -292,7 +292,7 @@ export default function ContactSection() {
                           placeholder="+34 677 10 77 88"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
-                          className={`w-full bg-negro border ${errors.phone ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-4 text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark`}
+                          className={`w-full bg-negro border ${errors.phone ? "border-rojo error-field shadow-[0_0_10px_rgba(255,51,51,0.2)]" : "border-blanco/10"} rounded-xl px-5 py-3.5 sm:py-4 text-base text-blanco focus:outline-none focus:border-rojo transition-all duration-300 placeholder:text-gris-dark min-h-[48px]`}
                         />
                       </div>
                     </div>

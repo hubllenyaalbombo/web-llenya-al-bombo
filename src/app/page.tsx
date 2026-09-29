@@ -6,6 +6,8 @@ import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import FollowSection from "@/components/FollowSection";
 import Footer from "@/components/Footer";
+import MobileActionBar from "@/components/MobileActionBar";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -23,6 +25,9 @@ export default function Home() {
         <ContactSection />
         <Footer />
       </div>
+
+      <FloatingWhatsApp />
+      <MobileActionBar />
     </>
   );
 }
