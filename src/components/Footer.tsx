@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="relative z-10 bg-negro-light pt-6 pb-20 sm:pb-24 xl:pb-0 px-5 sm:px-8 xl:pl-[250px] xl:pr-12">
+    <div className="relative z-10 bg-negro pt-6 pb-20 sm:pb-24 xl:pb-0 px-5 sm:px-8 xl:pl-[250px] xl:pr-12 w-full max-w-full overflow-hidden">
       <footer
         className="relative z-10 max-w-6xl xl:max-w-7xl mx-auto border-t-[6px] md:border-t-[8px] border-x-2 border-x-rojo/40 border-t-rojo border-b-0 rounded-t-[3rem] lg:rounded-t-[4.5rem] rounded-b-none overflow-hidden shadow-2xl shadow-black/80"
         style={{ background: "#141010" }}

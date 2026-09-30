@@ -17,8 +17,8 @@ export default function HeroSection() {
       className="relative min-h-[100dvh] flex flex-col items-center justify-center bg-transparent pt-16 md:pt-0 overflow-x-clip w-full max-w-full"
       aria-label="Presentación de Llenya al Bombo"
     >
-      {/* ═══════ Background — video (absolute en móvil para que nunca se filtre al arrastrar, fijo en desktop) ═══════ */}
-      <div className="absolute inset-0 md:fixed md:inset-0 z-0 overflow-hidden bg-negro pointer-events-none">
+      {/* ═══════ Background — video acotado exclusivamente al Hero ═══════ */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-negro pointer-events-none">
         <video
           autoPlay
           loop
