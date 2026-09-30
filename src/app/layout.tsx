@@ -11,7 +11,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://llenyaalbombo.com"),
+  metadataBase: new URL("https://www.llenyaalbombo.com"),
   title: {
     default: "Charanga Llenya al Bombo | Castellón |",
     template: "%s | Charanga Llenya al Bombo | Castellón |",

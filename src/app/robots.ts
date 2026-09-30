@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://llenyaalbombo.com/sitemap.xml",
+    sitemap: "https://www.llenyaalbombo.com/sitemap.xml",
   };
 }
