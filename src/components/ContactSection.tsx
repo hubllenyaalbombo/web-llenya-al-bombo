@@ -117,7 +117,7 @@ export default function ContactSection() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "495fa1c0-d3d7-4258-9ab8-6748c9b32939",
           botcheck: "",
           subject: `Nuevo presupuesto de ${name} para un/a ${eventType}`,
           from_name: name,
