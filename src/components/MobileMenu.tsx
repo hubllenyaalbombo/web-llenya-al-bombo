@@ -53,7 +53,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
         >
           {/* Header with Title & Close button */}
           <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-blanco/10">
-            <span className="font-heading comic-stroke text-lg sm:text-xl uppercase tracking-widest text-rojo">
+            <span className="font-heading comic-stroke text-2xl sm:text-3xl uppercase tracking-widest text-rojo">
               Menú
             </span>
             <button
@@ -69,8 +69,8 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           </div>
 
           {/* Links — Centered */}
-          <nav className="flex flex-col py-5 px-4 text-center">
-            <ul className="space-y-2" role="list">
+          <nav className="flex flex-col py-4 px-4 text-center">
+            <ul className="space-y-1.5" role="list">
               {NAV_LINKS.map((link, index) => (
                 <motion.li
                   key={link.href}
@@ -81,8 +81,8 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
                   <a
                     href={link.href}
                     onClick={handleLinkClick}
-                    style={{ fontSize: "clamp(1.15rem, 3.5vw, 1.45rem)" }}
-                    className="block py-3 px-4 font-heading comic-stroke text-blanco uppercase tracking-widest hover:text-rojo hover:bg-blanco/5 rounded-2xl transition-all duration-300"
+                    style={{ fontSize: "clamp(1.1rem, 3.2vw, 1.35rem)" }}
+                    className="block py-2.5 px-4 font-heading comic-stroke text-blanco uppercase tracking-widest hover:text-rojo hover:bg-blanco/5 rounded-2xl transition-all duration-300"
                   >
                     {link.label}
                   </a>
@@ -91,13 +91,13 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             </ul>
           </nav>
 
-          {/* CTA — Normal rounded button, centered */}
-          <div className="px-6 pb-6 pt-1">
+          {/* CTA — Centered, slim button (not overly tall) */}
+          <div className="px-6 pb-5 pt-1 flex justify-center">
             <motion.a
               href="#contacto"
               onClick={handleLinkClick}
-              className="flex items-center justify-center w-full py-4 px-6 bg-rojo text-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-base sm:text-lg rounded-2xl shadow-lg shadow-rojo/30 hover:bg-rojo-dark hover:shadow-rojo/50 active:scale-[0.98] transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
+              className="inline-flex items-center justify-center w-full max-w-[280px] py-2.5 sm:py-3 px-6 bg-rojo text-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-sm sm:text-base rounded-full shadow-lg shadow-rojo/30 hover:bg-rojo-dark hover:shadow-rojo/50 active:scale-[0.98] transition-all duration-300"
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.35 }}
             >
