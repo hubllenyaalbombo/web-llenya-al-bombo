@@ -93,18 +93,18 @@ export default function Navbar() {
         className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 ${modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
           } ${scrolled ? "bg-negro/90 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/50" : "bg-gradient-to-b from-negro/90 via-negro/40 to-transparent"}`}
       >
-        <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
+        <div className="flex items-center justify-center gap-3 sm:gap-6 max-w-xl mx-auto w-full px-2">
           {/* Logo / Brand Link */}
           <a
             href="#inicio"
-            className="flex items-center gap-2.5 sm:gap-3 group min-w-0"
+            className="flex items-center gap-2 sm:gap-2.5 group min-w-0"
             aria-label="Llenya al Bombo — Inicio"
           >
             <div className="w-13 h-13 sm:w-16 sm:h-16 overflow-hidden flex items-center justify-center shrink-0">
               <img
                 src="/Cabeza.svg"
                 alt="Llenya Logo"
-                className="w-full h-full object-contain scale-[2.3] group-hover:scale-[2.5] transition-transform"
+                className="w-full h-full object-contain scale-[4] group-hover:scale-[4.2] transition-transform"
               />
             </div>
             <div className="flex flex-col items-center justify-center text-center">
@@ -118,16 +118,16 @@ export default function Navbar() {
           </a>
 
           {/* Action & Menu Buttons */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <a
               href="#contacto"
-              className="px-3 py-1.5 sm:px-4 sm:py-2 bg-rojo text-blanco-pure text-[11px] sm:text-xs font-heading comic-stroke uppercase tracking-wider rounded-full shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-all whitespace-nowrap"
+              className="flex items-center justify-center py-2 px-3.5 sm:py-2.5 sm:px-4 bg-rojo text-blanco-pure rounded-xl text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider font-bold shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-transform whitespace-nowrap"
             >
               Presupuesto
             </a>
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 shadow-md transition-all"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blanco/10 hover:bg-blanco/20 active:scale-95 flex items-center justify-center text-blanco border border-blanco/15 shadow-md transition-all shrink-0"
               aria-label="Abrir menú"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
