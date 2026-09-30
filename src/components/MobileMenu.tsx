@@ -23,49 +23,37 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
 
   return (
     <>
-      {/* Overlay */}
+      {/* Backdrop overlay covering full screen — clicking anywhere outside closes menu */}
       <motion.div
-        className="fixed inset-0 z-[60] bg-negro/40 backdrop-blur-[2px]"
+        className="fixed inset-0 z-[70] bg-negro/70 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.25 }}
         onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Menu panel - Centered in viewport */}
-      <div className="fixed inset-0 z-[70] flex items-center justify-center pointer-events-none p-4">
+        aria-modal="true"
+        role="dialog"
+      >
+        {/* Menu panel - Centered in viewport, stopPropagation prevents closing when clicking inside */}
         <motion.div
           id="mobile-menu"
-          className="pointer-events-auto bg-negro/95 backdrop-blur-md border border-blanco/10 rounded-3xl flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden origin-center"
+          className="cursor-default bg-negro/95 backdrop-blur-md border border-blanco/10 rounded-3xl flex flex-col shadow-[0_25px_60px_rgba(0,0,0,0.8)] overflow-hidden origin-center"
           style={{
-            /* Width scales: ~80vw on small phones, ~55vw on tablets, max 400px */
-            width: "clamp(280px, 75vw, 420px)",
+            /* Width scales: ~75vw on small phones, max 380px */
+            width: "clamp(270px, 75vw, 380px)",
           }}
+          onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.9, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 10 }}
-          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          role="dialog"
-          aria-modal="true"
+          transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
           aria-label="Menú de navegación"
         >
-          {/* Header with Title & Close button */}
-          <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-blanco/10">
-            <span className="font-heading comic-stroke text-2xl sm:text-3xl uppercase tracking-widest text-rojo">
+          {/* Header with Centered Title (no cross button, clicks outside close it) */}
+          <div className="py-5 px-6 border-b border-blanco/10 text-center">
+            <span className="font-heading comic-stroke text-3xl sm:text-4xl uppercase tracking-widest text-rojo inline-block">
               Menú
             </span>
-            <button
-              onClick={onClose}
-              className="w-10 h-10 rounded-full bg-blanco/5 hover:bg-rojo text-blanco/80 hover:text-blanco flex items-center justify-center transition-colors"
-              aria-label="Cerrar menú"
-            >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
           </div>
 
           {/* Links — Centered */}
@@ -91,12 +79,12 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             </ul>
           </nav>
 
-          {/* CTA — Centered, slim button (not overly tall) */}
-          <div className="px-6 pb-5 pt-1 flex justify-center">
+          {/* CTA — Centered, narrow & sleek button */}
+          <div className="px-6 pb-6 pt-1 flex justify-center">
             <motion.a
               href="#contacto"
               onClick={handleLinkClick}
-              className="inline-flex items-center justify-center w-full max-w-[280px] py-2.5 sm:py-3 px-6 bg-rojo text-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-sm sm:text-base rounded-full shadow-lg shadow-rojo/30 hover:bg-rojo-dark hover:shadow-rojo/50 active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center justify-center px-7 py-2 bg-rojo text-blanco-pure font-heading comic-stroke font-bold uppercase tracking-wider text-sm rounded-full shadow-lg shadow-rojo/30 hover:bg-rojo-dark hover:shadow-rojo/50 active:scale-[0.98] transition-all duration-300"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.35 }}
@@ -105,7 +93,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
             </motion.a>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </>
   );
 }

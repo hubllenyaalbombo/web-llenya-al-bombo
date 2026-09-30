@@ -99,19 +99,24 @@ export default function Navbar() {
           {/* Logo / Brand Link */}
           <a
             href="#inicio"
-            className="flex items-center gap-2 sm:gap-3 group min-w-0"
+            className="flex items-center gap-2.5 sm:gap-3 group min-w-0"
             aria-label="Llenya al Bombo — Inicio"
           >
-            <div className="w-10 h-10 sm:w-12 sm:h-12 overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 overflow-hidden flex items-center justify-center shrink-0">
               <img
                 src="/Cabeza.svg"
                 alt="Llenya Logo"
-                className="w-full h-full object-contain scale-[2.2] group-hover:scale-[2.4] transition-transform"
+                className="w-full h-full object-contain scale-[2.3] group-hover:scale-[2.5] transition-transform"
               />
             </div>
-            <span className="font-heading comic-stroke text-[clamp(0.92rem,4vw,1.35rem)] text-blanco uppercase tracking-wide leading-none whitespace-nowrap">
-              Llenya al Bombo
-            </span>
+            <div className="flex flex-col items-center justify-center text-center">
+              <span className="font-heading comic-stroke text-[1.32rem] sm:text-3xl text-blanco uppercase tracking-wider leading-[0.88] text-center block">
+                Llenya
+              </span>
+              <span className="font-heading comic-stroke text-[1.16rem] sm:text-2xl text-rojo uppercase tracking-wider leading-[0.88] text-center block mt-0.5">
+                al Bombo
+              </span>
+            </div>
           </a>
 
           {/* Action & Menu Buttons */}
