@@ -43,9 +43,8 @@ export default function Navbar() {
     <>
       {/* ═══════ DESKTOP SIDEBAR (xl+ / 1280px+) ═══════ */}
       <motion.header
-        className={`hidden xl:flex fixed inset-y-0 my-auto left-8 z-50 w-[160px] h-max rounded-[2.5rem] border border-blanco/10 bg-negro/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex-col justify-between overflow-hidden transition-all duration-300 ${
-          modalOpen ? "opacity-0 pointer-events-none -translate-x-full" : "opacity-100 translate-x-0"
-        }`}
+        className={`hidden xl:flex fixed inset-y-0 my-auto left-8 z-50 w-[160px] h-max rounded-[2.5rem] border border-blanco/10 bg-negro/95 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.4)] flex-col justify-between overflow-hidden transition-all duration-300 ${modalOpen ? "opacity-0 pointer-events-none -translate-x-full" : "opacity-100 translate-x-0"
+          }`}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: modalOpen ? -200 : 0, opacity: modalOpen ? 0 : 1 }}
         transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -91,9 +90,8 @@ export default function Navbar() {
 
       {/* ═══════ MOBILE & TABLET TOP BAR (< xl) ═══════ */}
       <div
-        className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 ${
-          modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
-        } ${scrolled ? "bg-negro/90 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/50" : "bg-gradient-to-b from-negro/90 via-negro/40 to-transparent"}`}
+        className={`xl:hidden fixed top-0 inset-x-0 z-40 px-4 sm:px-6 py-3 sm:py-3.5 transition-all duration-300 ${modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
+          } ${scrolled ? "bg-negro/90 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/50" : "bg-gradient-to-b from-negro/90 via-negro/40 to-transparent"}`}
       >
         <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
           {/* Logo / Brand Link */}
@@ -102,7 +100,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 sm:gap-3 group min-w-0"
             aria-label="Llenya al Bombo — Inicio"
           >
-            <div className="w-11 h-11 sm:w-13 sm:h-13 overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-13 h-13 sm:w-16 sm:h-16 overflow-hidden flex items-center justify-center shrink-0">
               <img
                 src="/Cabeza.svg"
                 alt="Llenya Logo"
