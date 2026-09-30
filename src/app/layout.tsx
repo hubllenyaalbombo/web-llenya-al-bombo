@@ -13,17 +13,30 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   metadataBase: new URL("https://llenyaalbombo.com"),
   title: {
-    default: "Llenya al Bombo — Charanga & Xaranga Profesional para Eventos",
-    template: "%s | Llenya al Bombo",
+    default: "Charanga Llenya al Bombo | Castellón |",
+    template: "%s | Charanga Llenya al Bombo | Castellón |",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.svg"],
   },
   description:
-    "Xaranga y Charanga profesional para bodas, despedidas, fiestas patronales, festivales, carnavales y eventos en toda España. Música en directo y animación. ¡Pide presupuesto sin compromiso!",
+    "Xaranga y Charanga profesional para bodas, despedidas, fiestas patronales, festivales, carnavales y eventos en Castellón, Valencia y toda España. Música en directo y animación. ¡Pide presupuesto sin compromiso!",
   keywords: [
     "xaranga",
     "charanga",
-    "llenya al bombo",
-    "xaranga llenya al bombo",
+    "charanga castellon",
     "charanga llenya al bombo",
+    "xaranga llenya al bombo",
+    "llenya al bombo",
     "llenyaalbombo",
     "contratar charanga",
     "contratar xaranga",
@@ -35,7 +48,6 @@ export const metadata: Metadata = {
     "charanga fallas",
     "charanga moros y cristianos",
     "charanga valencia",
-    "charanga castellon",
     "charanga alicante",
     "charanga teruel",
     "charanga madrid",
@@ -45,9 +57,9 @@ export const metadata: Metadata = {
     "música en directo eventos",
     "charanga precio",
   ],
-  authors: [{ name: "Llenya al Bombo", url: "https://llenyaalbombo.com" }],
-  creator: "Llenya al Bombo",
-  publisher: "Llenya al Bombo",
+  authors: [{ name: "Charanga Llenya al Bombo", url: "https://llenyaalbombo.com" }],
+  creator: "Charanga Llenya al Bombo",
+  publisher: "Charanga Llenya al Bombo",
   formatDetection: {
     email: true,
     address: true,
@@ -61,11 +73,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Llenya al Bombo — Charanga & Xaranga Profesional",
+    title: "Charanga Llenya al Bombo | Castellón |",
     description:
       "La energía que tu celebración necesita. Charanga profesional para bodas, fiestas, despedidas y eventos. ¡Solicita presupuesto!",
     url: "https://llenyaalbombo.com",
-    siteName: "Llenya al Bombo",
+    siteName: "Charanga Llenya al Bombo",
     locale: "es_ES",
     type: "website",
     images: [
@@ -79,7 +91,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Llenya al Bombo — Charanga & Xaranga Profesional",
+    title: "Charanga Llenya al Bombo | Castellón |",
     description:
       "Xaranga y Charanga profesional para bodas, fiestas patronales y eventos. La mejor música y animación en directo.",
     images: ["/galeria/galeria-4.jpg"],
@@ -108,6 +120,10 @@ export default function RootLayout({
       className="h-full antialiased"
     >
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="preload" href="/hero-poster.webp" as="image" type="image/webp" fetchPriority="high" />
         <link href="https://fonts.cdnfonts.com/css/pusab" rel="stylesheet" />
         {/* Schema.org — Structured Data (MusicGroup & EntertainmentBusiness) */}
