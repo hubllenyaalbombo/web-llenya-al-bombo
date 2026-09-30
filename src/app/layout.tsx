@@ -207,7 +207,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${nunito.variable} font-sans min-h-full flex flex-col overflow-x-hidden`}>
+      <body className={`${nunito.variable} font-sans min-h-full flex flex-col overflow-x-clip w-full max-w-full overscroll-x-none`}>
         {/* Skip link — accessibility */}
         <a href="#main-content" className="skip-link">
           Saltar al contenido principal
@@ -216,7 +216,7 @@ export default function RootLayout({
         <SmoothScrollProvider />
         {/* Irregular Graffiti Background */}
         <GlobalGraffiti />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="flex-1 w-full max-w-full overflow-x-clip">
           {children}
         </main>
       </body>

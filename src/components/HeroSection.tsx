@@ -14,11 +14,11 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[100dvh] flex flex-col items-center justify-center bg-transparent pt-16 md:pt-0"
+      className="relative min-h-[100dvh] flex flex-col items-center justify-center bg-transparent pt-16 md:pt-0 overflow-x-clip w-full max-w-full"
       aria-label="Presentación de Llenya al Bombo"
     >
-      {/* ═══════ Background — video FIJO (parallax cover effect) ═══════ */}
-      <div className="fixed inset-0 z-0 overflow-hidden bg-negro">
+      {/* ═══════ Background — video (absolute en móvil para que nunca se filtre al arrastrar, fijo en desktop) ═══════ */}
+      <div className="absolute inset-0 md:fixed md:inset-0 z-0 overflow-hidden bg-negro pointer-events-none">
         <video
           autoPlay
           loop
@@ -39,10 +39,10 @@ export default function HeroSection() {
       </div>
 
       {/* ═══════ Contenido principal ═══════ */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center overflow-hidden">
 
         <RevealOnScroll delay={0.15}>
-          <h1 className="font-heading comic-stroke text-[clamp(3.6rem,16.5vw,15.5rem)] leading-[0.86] text-blanco-pure uppercase tracking-tighter drop-shadow-[0_0_25px_rgba(255,255,255,0.15)] select-none">
+          <h1 className="font-heading comic-stroke text-[clamp(2.55rem,12.2vw,5rem)] sm:text-[clamp(4.5rem,13vw,8rem)] md:text-[clamp(7.5rem,15vw,15rem)] leading-[0.86] text-blanco-pure uppercase tracking-tighter drop-shadow-[0_0_25px_rgba(255,255,255,0.15)] select-none max-w-full">
             LLENYA <br />
             <span className="text-rojo drop-shadow-[0_0_30px_rgba(225,6,0,0.4)]">AL BOMBO</span>
           </h1>

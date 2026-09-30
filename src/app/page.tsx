@@ -17,7 +17,7 @@ export default function Home() {
       <HeroSection />
 
       {/* This wrapper sits above the fixed hero video, covering it on scroll */}
-      <div className="relative z-10 bg-negro">
+      <div className="relative z-10 bg-negro w-full max-w-full overflow-x-clip min-h-screen">
         <AboutSection />
         <EventsSection />
         <GallerySection />
