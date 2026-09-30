@@ -95,30 +95,30 @@ export default function Navbar() {
           modalOpen ? "opacity-0 pointer-events-none -translate-y-full" : "opacity-100 translate-y-0"
         } ${scrolled ? "bg-negro/90 backdrop-blur-md border-b border-blanco/10 shadow-lg shadow-black/50" : "bg-gradient-to-b from-negro/90 via-negro/40 to-transparent"}`}
       >
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+        <div className="flex items-center justify-between max-w-7xl mx-auto gap-3">
           {/* Logo / Brand Link */}
           <a
             href="#inicio"
-            className="flex items-center gap-2.5 sm:gap-3 group"
+            className="flex items-center gap-3 group min-w-0"
             aria-label="Llenya al Bombo — Inicio"
           >
-            <div className="w-12 h-12 sm:w-14 sm:h-14 overflow-hidden flex items-center justify-center shrink-0">
+            <div className="w-13 h-13 sm:w-16 sm:h-16 overflow-hidden flex items-center justify-center shrink-0">
               <img
                 src="/Cabeza.svg"
                 alt="Llenya Logo"
-                className="w-full h-full object-contain scale-[2.4] group-hover:scale-[2.6] transition-transform"
+                className="w-full h-full object-contain scale-[2.7] group-hover:scale-[2.9] transition-transform"
               />
             </div>
-            <span className="font-heading comic-stroke text-lg sm:text-2xl text-blanco uppercase tracking-wide leading-none">
+            <span className="font-heading comic-stroke text-[1.35rem] sm:text-2xl md:text-3xl text-blanco uppercase tracking-wide leading-none whitespace-nowrap">
               Llenya al Bombo
             </span>
           </a>
 
           {/* Action & Menu Buttons */}
-          <div className="flex items-center gap-2 sm:gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               href="#contacto"
-              className="px-3.5 py-1.5 sm:px-4 sm:py-2 bg-rojo text-blanco-pure text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider rounded-full shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-all"
+              className="px-4 py-2 sm:px-5 sm:py-2.5 bg-rojo text-blanco-pure text-xs sm:text-sm font-heading comic-stroke uppercase tracking-wider rounded-full shadow-md shadow-rojo/30 hover:bg-rojo-dark active:scale-95 transition-all"
             >
               Presupuesto
             </a>
