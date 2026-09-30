@@ -453,7 +453,7 @@ export default function AboutSection() {
                 <RevealOnScroll delay={0.3}>
                   <p className="text-gris text-sm md:text-base leading-relaxed mb-6 font-medium">
                     Hemos recorrido gran parte del país animando todo tipo de celebraciones: desde fiestas
-                    patronales y bodas, hasta eventos multitudinarios como las Fallas o la Vaquilla del Ángel.
+                    patronales y bodas, hasta eventos multitudinarios.
                     Contamos con un repertorio versátil y dinámico, siempre dispuesto a adaptarse a lo que pida el público.
                   </p>
                 </RevealOnScroll>
