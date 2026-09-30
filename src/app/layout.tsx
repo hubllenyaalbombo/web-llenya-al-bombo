@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
       { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
       { url: "/favicon.ico", sizes: "any" },
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: ["/favicon.svg"],
+    shortcut: ["/favicon.ico"],
   },
   description:
-    "Xaranga y Charanga profesional para bodas, despedidas, fiestas patronales, festivales, carnavales y eventos en Castellón, Valencia y toda España. Música en directo y animación. ¡Pide presupuesto sin compromiso!",
+    "🎺 Charanga y Xaranga profesional para bodas, despedidas y fiestas patronales en Castellón y Valencia. Música 100% en directo y animación. ¡Pide presupuesto!",
   keywords: [
     "xaranga",
     "charanga",
@@ -120,7 +121,9 @@ export default function RootLayout({
       className="h-full antialiased"
     >
       <head>
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -135,11 +138,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": ["MusicGroup", "PerformingGroup"],
-                  "@id": "https://llenyaalbombo.com/#organization",
-                  name: "Llenya al Bombo",
+                  "@id": "https://www.llenyaalbombo.com/#organization",
+                  name: "Charanga Llenya al Bombo",
                   alternateName: [
                     "Xaranga Llenya al Bombo",
-                    "Charanga Llenya al Bombo",
                     "Llenya al Bombo",
                     "llenyaalbombo",
                     "Xaranga Llenya",
@@ -147,7 +149,7 @@ export default function RootLayout({
                   ],
                   description:
                     "Charanga y Xaranga profesional española especializada en bodas, fiestas patronales, despedidas, festivales y eventos en vivo.",
-                  url: "https://llenyaalbombo.com",
+                  url: "https://www.llenyaalbombo.com",
                   foundingDate: "2007",
                   email: "xarangallenyaalbombo@gmail.com",
                   telephone: "+34696279408",
@@ -178,9 +180,9 @@ export default function RootLayout({
                 },
                 {
                   "@type": "EntertainmentBusiness",
-                  "@id": "https://llenyaalbombo.com/#business",
-                  name: "Llenya al Bombo — Espectáculos y Música en Vivo",
-                  url: "https://llenyaalbombo.com",
+                  "@id": "https://www.llenyaalbombo.com/#business",
+                  name: "Charanga Llenya al Bombo — Espectáculos y Música en Vivo",
+                  url: "https://www.llenyaalbombo.com",
                   telephone: "+34696279408",
                   email: "xarangallenyaalbombo@gmail.com",
                   priceRange: "€€",
@@ -188,17 +190,17 @@ export default function RootLayout({
                   currenciesAccepted: "EUR",
                   paymentAccepted: "Cash, Credit Card, Bank Transfer, Bizum",
                   parentOrganization: {
-                    "@id": "https://llenyaalbombo.com/#organization"
+                    "@id": "https://www.llenyaalbombo.com/#organization"
                   }
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://llenyaalbombo.com/#website",
-                  url: "https://llenyaalbombo.com",
-                  name: "Llenya al Bombo",
-                  alternateName: "Xaranga Llenya al Bombo",
+                  "@id": "https://www.llenyaalbombo.com/#website",
+                  url: "https://www.llenyaalbombo.com",
+                  name: "Charanga Llenya al Bombo",
+                  alternateName: ["Llenya al Bombo", "Xaranga Llenya al Bombo", "llenyaalbombo.com"],
                   publisher: {
-                    "@id": "https://llenyaalbombo.com/#organization"
+                    "@id": "https://www.llenyaalbombo.com/#organization"
                   },
                   inLanguage: ["es", "ca"]
                 }
