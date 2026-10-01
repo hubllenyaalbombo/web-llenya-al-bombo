@@ -45,8 +45,8 @@ export default function EventsSection() {
               <div
                 className="group relative flex flex-col justify-start h-full bg-[#121212] border-2 border-blanco/10 hover:border-rojo/60 rounded-[2rem] p-7 transition-all duration-300 shadow-xl shadow-black/40 hover:-translate-y-1 overflow-hidden"
               >
-                {/* Background red glow on hover */}
-                <div className="absolute -right-12 -top-12 w-32 h-32 bg-rojo/10 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-rojo/20 transition-all duration-500 pointer-events-none" />
+                {/* Background red glow suave sin filtros blur que puedan recortar esquinas */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(215,55,56,0.12)_0%,_transparent_65%)] group-hover:bg-[radial-gradient(ellipse_at_top_right,_rgba(215,55,56,0.22)_0%,_transparent_70%)] transition-all duration-500 pointer-events-none" />
 
                 {/* Title & Description */}
                 <div className="relative z-10 flex-1">

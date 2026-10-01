@@ -286,7 +286,7 @@ export default function TeamModal({ onClose }: TeamModalProps) {
                   {/* Name (Huge) */}
                   <h2
                     id="team-modal-heading"
-                    className="font-heading comic-stroke text-[2.8rem] sm:text-7xl md:text-[5.5rem] lg:text-[7rem] text-blanco uppercase leading-[0.9] tracking-wide drop-shadow-2xl mb-4 sm:mb-6"
+                    className="font-heading comic-stroke text-[2.8rem] sm:text-7xl md:text-[5.5rem] lg:text-[7rem] text-blanco uppercase leading-[0.9] tracking-wide mb-4 sm:mb-6"
                     style={{ wordSpacing: '100vw' }} /* Forces each word on a new line if it's too wide, or just lets it wrap naturally */
                   >
                     {musician.name}

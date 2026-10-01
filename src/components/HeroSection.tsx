@@ -42,9 +42,9 @@ export default function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center justify-center overflow-hidden">
 
         <RevealOnScroll delay={0.15}>
-          <h1 className="font-heading comic-stroke text-[clamp(2.55rem,12.2vw,5rem)] sm:text-[clamp(4.5rem,13vw,8rem)] md:text-[clamp(7.5rem,15vw,15rem)] leading-[0.86] text-blanco-pure uppercase tracking-tighter drop-shadow-[0_0_25px_rgba(255,255,255,0.15)] select-none max-w-full">
+          <h1 className="font-heading comic-stroke text-[clamp(2.55rem,12.2vw,5rem)] sm:text-[clamp(4.5rem,13vw,8rem)] md:text-[clamp(7.5rem,15vw,15rem)] leading-[0.86] text-blanco-pure uppercase tracking-tighter select-none max-w-full">
             LLENYA <br />
-            <span className="text-rojo drop-shadow-[0_0_30px_rgba(225,6,0,0.4)]">AL BOMBO</span>
+            <span className="text-rojo">AL BOMBO</span>
           </h1>
         </RevealOnScroll>
 
