@@ -13,8 +13,8 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.llenyaalbombo.com"),
   title: {
-    default: "Charanga Llenya al Bombo | Castellón |",
-    template: "%s | Charanga Llenya al Bombo | Castellón |",
+    default: "Charanga Llenya al Bombo | Castellón y Valencia",
+    template: "%s | Charanga Llenya al Bombo",
   },
   icons: {
     icon: [
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Charanga Llenya al Bombo | Castellón |",
+    title: "Charanga Llenya al Bombo | Castellón y Valencia",
     description:
       "La energía que tu celebración necesita. Charanga profesional para bodas, fiestas, despedidas y eventos. ¡Solicita presupuesto!",
     url: "https://llenyaalbombo.com",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Charanga Llenya al Bombo | Castellón |",
+    title: "Charanga Llenya al Bombo | Castellón y Valencia",
     description:
       "Xaranga y Charanga profesional para bodas, fiestas patronales y eventos. La mejor música y animación en directo.",
     images: ["/galeria/galeria-4.jpg"],
